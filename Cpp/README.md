@@ -10,9 +10,10 @@ Needed tools
 Quick start
 -----------
 
-'''sh
-  ./run-once-cmake.sh
-'''
+```sh
+./run-once-cmake.sh
+```
+
 Coverage report in build/test_coverage/index.html
 
 Tested on
