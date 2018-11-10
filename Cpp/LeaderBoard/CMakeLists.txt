@@ -10,3 +10,5 @@ add_library(LeaderBoard
 )
 target_include_directories(LeaderBoard PUBLIC include )
 set_property(TARGET LeaderBoard PROPERTY CXX_STANDARD 14)
+
+add_subdirectory(tests)

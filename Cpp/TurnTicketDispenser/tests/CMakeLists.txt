@@ -1,6 +1,6 @@
 
 add_executable(TicketDispenser_Test_Gmock
-		TicketDispenser_Test.cpp
+        TicketDispenser_Test.cpp
 	      )
 
 target_link_libraries(TicketDispenser_Test_Gmock

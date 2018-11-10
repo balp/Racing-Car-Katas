@@ -50,19 +50,10 @@ include(CodeCoverage)
 APPEND_COVERAGE_COMPILER_FLAGS()
 
 add_subdirectory(TirePressureMonitoring)
-add_subdirectory(TirePressureMonitoring.gmock)
-
 add_subdirectory(TextConverter)
-add_subdirectory(TextConverter.gmock)
-
 add_subdirectory(TurnTicketDispenser)
-add_subdirectory(TurnTicketDispenser.gmock)
-
 add_subdirectory(TelemetrySystem)
-add_subdirectory(TelemetrySystem.gmock)
-
 add_subdirectory(LeaderBoard)
-add_subdirectory(LeaderBoard.gmock)
 
 ## Test for gcovr
 SETUP_TARGET_FOR_COVERAGE_GCOVR_HTML(

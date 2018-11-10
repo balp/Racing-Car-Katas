@@ -1,4 +1,4 @@
-Bin/
+cmake-build-debug/
 build/
 **/test/
 *.compiled_hpp

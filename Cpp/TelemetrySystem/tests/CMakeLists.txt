@@ -1,5 +1,5 @@
 add_executable(TelemetryDiagnosticControls_Test_Gmock
-		TelemetryDiagnosticControls_Test.cpp
+        TelemetryDiagnosticControls_Test.cpp
 	      )
 
 target_link_libraries(TelemetryDiagnosticControls_Test_Gmock

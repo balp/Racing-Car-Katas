@@ -1,6 +1,6 @@
 
 add_executable(TirePressureMonitoring_Test_Gmock
-    Alarm_Test.cpp
+        Alarm_Test.cpp
 )
 
 target_link_libraries(TirePressureMonitoring_Test_Gmock
