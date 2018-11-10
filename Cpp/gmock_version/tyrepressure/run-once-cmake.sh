@@ -5,4 +5,4 @@ if [[ ! -d build ]]; then
 fi
 
 cd build
-cmake .. -DCMAKE_BUILD_TYPE=DEBUG && cmake --build . && cmake --build . --target tyrepressure_html_coverage
+cmake .. -DCMAKE_BUILD_TYPE=DEBUG && cmake --build . && env CTEST_OUTPUT_ON_FAILURE=1 cmake --build . --target tyrepressure_html_coverage
