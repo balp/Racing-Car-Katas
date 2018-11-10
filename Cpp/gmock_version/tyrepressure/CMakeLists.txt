@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(Racing-Car-GMock)
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/../../../cmake")
 enable_testing()
 
 include(ExternalProject)
@@ -45,6 +46,9 @@ include_directories(${GTEST_INCLUDE_DIRS})
 include_directories(${GMOCK_INCLUDE_DIRS})
 include_directories(${CMAKE_BINARY_DIR}/aprovaltest/src)
 
+include(CodeCoverage)
+APPEND_COVERAGE_COMPILER_FLAGS()
+
 
 add_executable(tyrepressure_test
     Alarm.cpp
@@ -60,3 +64,14 @@ set_property(TARGET tyrepressure_test PROPERTY CXX_STANDARD 14)
 add_dependencies(tyrepressure_test aprovaltest)
 add_test(NAME tyrepressure_test COMMAND tyrepressure_test)
 
+#SETUP_TARGET_FOR_COVERAGE_LCOV(
+#    NAME tyrepressure_coverage
+#    EXECUTABLE tyrepressure_test
+#    DEPENDENCIES tyrepressure_test
+#    )
+
+SETUP_TARGET_FOR_COVERAGE_GCOVR_HTML(
+    NAME tyrepressure_html_coverage
+    EXECUTABLE ctest -j ${PROCESSOR_COUNT}
+    DEPENDENCIES tyrepressure_test
+    )
