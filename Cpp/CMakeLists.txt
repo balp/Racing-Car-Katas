@@ -49,20 +49,20 @@ include_directories(${CMAKE_BINARY_DIR}/aprovaltest/src)
 include(CodeCoverage)
 APPEND_COVERAGE_COMPILER_FLAGS()
 
-add_subdirectory(Source/TirePressureMonitoring)
-add_subdirectory(Source/TirePressureMonitoring.gmock)
+add_subdirectory(TirePressureMonitoring)
+add_subdirectory(TirePressureMonitoring.gmock)
 
-add_subdirectory(Source/TextConverter)
-add_subdirectory(Source/TextConverter.gmock)
+add_subdirectory(TextConverter)
+add_subdirectory(TextConverter.gmock)
 
-add_subdirectory(Source/TurnTicketDispenser)
-add_subdirectory(Source/TurnTicketDispenser.gmock)
+add_subdirectory(TurnTicketDispenser)
+add_subdirectory(TurnTicketDispenser.gmock)
 
-add_subdirectory(Source/TelemetrySystem)
-add_subdirectory(Source/TelemetrySystem.gmock)
+add_subdirectory(TelemetrySystem)
+add_subdirectory(TelemetrySystem.gmock)
 
-add_subdirectory(Source/LeaderBoard)
-add_subdirectory(Source/LeaderBoard.gmock)
+add_subdirectory(LeaderBoard)
+add_subdirectory(LeaderBoard.gmock)
 
 ## Test for gcovr
 SETUP_TARGET_FOR_COVERAGE_GCOVR_HTML(

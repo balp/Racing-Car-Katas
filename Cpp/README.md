@@ -1,46 +1,37 @@
-Requirements:
-- CMake
-- CppUnit
+C++ Version
+===========
+Needed tools
+------------
 
-Use your package manager to install or download:
-- cmake from: https://cmake.org
-- cppunit from: https://sourceforge.net/projects/cppunit/
+ C++ compiler supporting C++-14 reconized by CMake > 3.5:ish
+ gcovr - to collect coverage from tests
 
-Binaries are put to "Cpp/Bin" folder.
 
-Build steps to generate makefiles:
-```sh
-cd Racing-Car-Katas/Cpp
-mkdir build
-cd build
-cmake ../Source
-make
-```
+Quick start
+-----------
 
-On Windows for VS2012 replace step 4 by:
-```sh
-cmake -G"Visual Studio 12" ..\Source
-```
+'''sh
+  ./run-once-cmake.sh
+'''
+Coverage report in build/test_coverage/index.html
 
-On mac for XCode replace step 4 by:
-```sh
-cmake -G"XCode" ../Source
-```
+Tested on
+---------
 
-For Eclipse 4.4 with CDT4 replace step 4 by:
-```sh
-cmake -G"Eclipse CDT4 - Unix Makefiles" -D_ECLIPSE_VERSION=4.4 ../Source
-```
+ Ununtu 18.04 - CMake 3.10
+ macOS Mojave - Cmake 3.12
 
-For CodeBlocks replace step 4 by:
-```sh
-cmake -G"CodeBlocks - Unix Makefiles" ../Source
-```
 
-For CodeListe replace step 4 by:
-```sh
-cmake -G"CodeLite - Unix Makefiles" ../Source
-```
+Random notes
+------------
 
-google "cmake generators" if you need something else.
+Will download and use googletest (including googlemock)
+bash-script for convinience build and test
+
+
+Nice things to solve in future
+------------------------------
+
+*  Possibly use lcov in place of gcovr if gcovr is missing
+*  Possibility for using XCode unit test and coverage
 
