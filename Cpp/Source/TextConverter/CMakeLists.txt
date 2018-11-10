@@ -1,7 +1,10 @@
-cmake_minimum_required(VERSION 2.8.11)
-project(TextConverter)
 
-aux_source_directory(source PROJECT_SOURCE)
-file(GLOB PROJECT_INCLUDES "include/*.h")
-
-add_library(${PROJECT_NAME} STATIC ${PROJECT_SOURCE} ${PROJECT_INCLUDES})
+add_library(TextConverter
+	include/HtmlPagesConverter.h
+	include/HtmlTextConverter.h
+	include/StringEscapeUtils.h
+	source/HtmlPagesConverter.cpp
+	source/HtmlTextConverter.cpp
+)
+target_include_directories(TextConverter PUBLIC include )
+set_property(TARGET TextConverter PROPERTY CXX_STANDARD 14)

@@ -1,7 +1,11 @@
-cmake_minimum_required(VERSION 2.8.11)
-project(TurnTicketDispenser)
+add_library(TicketDispenser
+	include/TurnNumberSequence.h
+	include/TurnTicket.h
+	include/TicketDispenser.h
+	source/TurnNumberSequence.cpp
+	source/TurnTicket.cpp
+	source/TicketDispenser.cpp
+)
+target_include_directories(TicketDispenser PUBLIC include )
+set_property(TARGET TicketDispenser PROPERTY CXX_STANDARD 14)
 
-aux_source_directory(source PROJECT_SOURCE)
-file(GLOB PROJECT_INCLUDES "include/*.h")
-
-add_library(${PROJECT_NAME} STATIC ${PROJECT_SOURCE} ${PROJECT_INCLUDES})

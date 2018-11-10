@@ -2,3 +2,4 @@ Bin/
 build/
 **/test/
 *.compiled_hpp
+*.swp

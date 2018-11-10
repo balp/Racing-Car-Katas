@@ -1,7 +1,8 @@
-cmake_minimum_required(VERSION 2.8.11)
-project(TelemetrySystem)
-
-aux_source_directory(source PROJECT_SOURCE)
-file(GLOB PROJECT_INCLUDES "include/*.h")
-
-add_library(${PROJECT_NAME} STATIC ${PROJECT_SOURCE} ${PROJECT_INCLUDES})
+add_library(TelemetrySystem
+		include/TelemetryClient.h
+		include/TelemetryDiagnosticControls.h
+		source/TelemetryClient.cpp
+		source/TelemetryDiagnosticControls.cpp
+)
+target_include_directories(TelemetrySystem PUBLIC include )
+set_property(TARGET TelemetrySystem PROPERTY CXX_STANDARD 14)
