@@ -1,16 +1,17 @@
 #pragma once
 
+#include <memory>
 #include "Sensor.h"
 
 class Alarm
 {
 public:
-    Alarm();
+    Alarm(std::shared_ptr<ISensor> sensor);
     void check();
     bool isAlarmOn();
 
 protected:
-    Sensor m_sensor;
+    std::shared_ptr<ISensor> m_sensor;
     double m_lowPressureThreshold;
     double m_highPressureThreshold;
     bool m_alarmOn;

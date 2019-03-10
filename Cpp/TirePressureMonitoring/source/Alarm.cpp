@@ -1,12 +1,18 @@
+#include <utility>
+#include <memory>
 
 #include "../include/Alarm.h"
 
-Alarm::Alarm() : m_sensor(), m_lowPressureThreshold(17), m_highPressureThreshold(21), m_alarmOn(false)
+Alarm::Alarm(std::shared_ptr<ISensor> sensor) :
+    m_sensor(sensor),
+    m_lowPressureThreshold(17),
+    m_highPressureThreshold(21),
+    m_alarmOn(false)
 {}
 
 void Alarm::check()
 {
-    double psiPressureValue = m_sensor.popNextPressurePsiValue();
+    double psiPressureValue = m_sensor->popNextPressurePsiValue();
 
     if (psiPressureValue < m_lowPressureThreshold || m_highPressureThreshold < psiPressureValue)
     {

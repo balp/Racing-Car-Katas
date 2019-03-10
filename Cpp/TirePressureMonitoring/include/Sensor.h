@@ -1,8 +1,16 @@
 #pragma once
 
-class Sensor
+class ISensor
+{
+public:
+    virtual ~ISensor() {}
+    virtual double popNextPressurePsiValue() = 0;
+};
+
+class Sensor : public ISensor
 {
 public:
     Sensor();
-    double popNextPressurePsiValue();    
+    virtual ~Sensor() {}
+    virtual double popNextPressurePsiValue() override;
 };
